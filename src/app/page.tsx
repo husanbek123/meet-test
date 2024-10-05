@@ -6,7 +6,10 @@ import { Suspense } from "react";
 function Nimadir() {
   const searchParams = useSearchParams();
 
-  return <h1>{JSON.stringify(searchParams)}</h1>;
+  const paramsArr: any[] = [];
+  searchParams.forEach((i) => paramsArr.push(i));
+
+  return <h1>{JSON.stringify(paramsArr)}</h1>;
 }
 
 export default function Home() {
@@ -14,9 +17,6 @@ export default function Home() {
 
   return (
     <div className="p-7">
-      <h1>Hello {params.name}</h1>
-      Params:
-      <h1>{JSON.stringify(params)}</h1>
       <Suspense>
         <Nimadir />
       </Suspense>
