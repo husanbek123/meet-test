@@ -17,6 +17,7 @@ function Search() {
 export default function Home() {
   const params = useParams();
   const searchParams = useSearchParams();
+  console.log(searchParams);
 
   return (
     <div className="p-7">
