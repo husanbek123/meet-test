@@ -19,24 +19,36 @@ function Nimadir() {
     return <h1>Token is not correct</h1>;
   }
 
-  const tokenPayload1 = JSON.parse(
-    Buffer.from(SplittedToken[0], "base64").toString()
-  );
+  if (JSON.parse(Buffer.from(SplittedToken[0], "base64").toString())) {
+    const tokenPayload1 = JSON.parse(
+      Buffer.from(SplittedToken[0], "base64").toString()
+    );
+    const tokenPayload2 = JSON.parse(
+      Buffer.from(SplittedToken[1], "base64").toString()
+    );
 
-  const tokenPayload2 = JSON.parse(
-    Buffer.from(SplittedToken[1], "base64").toString()
-  );
+    return (
+      <ul>
+        <li>{JSON.stringify(tokenPayload1)}</li>
+        <li>{JSON.stringify(tokenPayload2)}</li>
+      </ul>
+    );
+  }
 
-  const tokenPayload3 = JSON.parse(
-    Buffer.from(SplittedToken[2], "base64").toString()
-  );
+  // const tokenPayload2 = JSON.parse(
+  //   Buffer.from(SplittedToken[1], "base64").toString()
+  // );
+
+  // const tokenPayload3 = JSON.parse(
+  //   Buffer.from(SplittedToken[2], "base64").toString()
+  // );
 
   return (
     <div>
       <h1>{JSON.stringify(paramsArr)}</h1>
-      <div>{tokenPayload1}</div>
-      <div>{tokenPayload2}</div>
-      <div>{tokenPayload3}</div>
+      {/* <div>{tokenPayload1}</div> */}
+      {/* <div>{tokenPayload2}</div>
+      <div>{tokenPayload3}</div> */}
     </div>
   );
 }
