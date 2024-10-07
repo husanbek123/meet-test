@@ -11,6 +11,14 @@ function Nimadir() {
 
   const SplittedToken = searchParams.get("token")?.split(".") as any;
 
+  if (!searchParams.get("token")) {
+    return <h1>Token not found</h1>;
+  }
+
+  if (!SplittedToken) {
+    return <h1>Token is not correct</h1>;
+  }
+
   const tokenPayload1 = JSON.parse(
     Buffer.from(SplittedToken[0], "base64").toString()
   );
