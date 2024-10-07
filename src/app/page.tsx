@@ -28,10 +28,15 @@ function Nimadir() {
     );
 
     return (
-      <ul>
-        <li>{JSON.stringify(tokenPayload1)}</li>
-        <li>{JSON.stringify(tokenPayload2)}</li>
-      </ul>
+      <div>
+        <ul>
+          <li>{JSON.stringify(tokenPayload1)}</li>
+          <li>{JSON.stringify(tokenPayload2)}</li>
+        </ul>
+        <br />
+        <br />
+        <h1>Token: {searchParams.get("token")}</h1>
+      </div>
     );
   }
 
